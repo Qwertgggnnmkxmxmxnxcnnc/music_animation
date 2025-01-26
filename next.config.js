@@ -5,11 +5,17 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/music_animation' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/music_animation/' : '',
+  basePath: '/music_animation',
+  assetPrefix: '/music_animation/',
   trailingSlash: true,
+  transpilePackages: ['three', 'shader-park-core'],
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
+    config.module.rules.push({
+      test: /\.(glsl|vs|fs|vert|frag)$/,
+      exclude: /node_modules/,
+      use: ['raw-loader'],
+    });
     return config;
   },
 }
