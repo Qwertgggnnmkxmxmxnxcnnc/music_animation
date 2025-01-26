@@ -1,0 +1,27 @@
+{
+  "name": "shaders_test_project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "serve": "npx serve@latest out",
+    "export": "next build",
+    "deploy": "next build && touch out/.nojekyll"
+  },
+  "dependencies": {
+    "@types/three": "^0.172.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "shader-park-core": "0.1.40",
+    "three": "^0.172.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.10",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  },
+  "homepage": "https://qwertgggnnmkxmxmxnxcnnc.github.io/music_animation"
+}
