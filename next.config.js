@@ -5,8 +5,9 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: '/music_animation',
-  assetPrefix: '/music_animation/',
+  basePath: process.env.NODE_ENV === 'production' ? '/music_animation' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/music_animation/' : '',
+  trailingSlash: true,
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
     return config;
