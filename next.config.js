@@ -5,6 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
+  basePath: '/music_animation',
+  assetPrefix: '/music_animation/',
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
     return config;
