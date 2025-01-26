@@ -3,7 +3,7 @@ import ShaderViewer from '../components/ShaderViewer';
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [currentAnimation, setCurrentAnimation] = useState<1 | 2>(1);
+  const [currentAnimation, setCurrentAnimation] = useState<1 | 2 | 3 | 4 | 5>(1);
   const [dimensions, setDimensions] = useState({ width: 500, height: 500 });
   const audioRef = useRef<HTMLAudioElement>(null);
   const [audioContext, setAudioContext] = useState<AudioContext | null>(null);
@@ -88,7 +88,7 @@ export default function Home() {
       }}>
         <select
           value={currentAnimation}
-          onChange={(e) => setCurrentAnimation(Number(e.target.value) as 1 | 2)}
+          onChange={(e) => setCurrentAnimation(Number(e.target.value) as 1 | 2 | 3 | 4 | 5)}
           style={{
             padding: '8px 12px',
             borderRadius: '20px',
@@ -102,6 +102,9 @@ export default function Home() {
         >
           <option value={1}>Анимация 1</option>
           <option value={2}>Анимация 2</option>
+          <option value={3}>Анимация 3</option>
+          <option value={4}>Анимация 4</option>
+          <option value={5}>Анимация 5</option>
         </select>
         <button
           onClick={() => setIsDarkMode(!isDarkMode)}
